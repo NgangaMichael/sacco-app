@@ -1,0 +1,31 @@
+<%- include("partials/header")  %>
+<%- include("partials/navbar")  %> 
+
+    <div class="container" style="width: 50%; margin: auto; margin-top: 5rem;">
+        <div class="container">
+            <h4>Edit Details of <%= sacco.name %> Sacco</h4>
+        <hr>
+        <form action="/details/<%= sacco._id %>?_method=PATCH" method="POST">
+            <label for="name" class="form-label">Sacco Name</label> 
+            <input type="name" class="form-control" name="name" id="name" placeholder="<%= sacco.name %>" >
+            
+            <label for="units" class="form-label">Units</label> 
+            <input type="number" class="form-control" name="units" id="units" placeholder="<%= sacco.units %>">
+            
+            <label for="road" class="form-label">Road</label> 
+            <input type="text" class="form-control" name="road" id="road" placeholder="<%= sacco.road %>">
+             
+            <label for="about" class="form-label">about</label> 
+            <textarea name="about" id="about" class="form-control" cols="30" rows="5" placeholder="Start typing...">
+                <%= sacco.name %>
+            </textarea>
+            
+            <label for="image" class="form-label">image</label> 
+            <input type="file" class="form-control" name="image" id="image">
+            <br>
+            <button class="btn btn-success">Save Changes</button>
+        </form> <br>
+        </div>
+    </div>
+
+<%- include("partials/footer")  %> 

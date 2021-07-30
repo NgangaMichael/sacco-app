@@ -1,0 +1,45 @@
+<%- include("partials/header")  %>
+<%- include("partials/navbar")  %> 
+
+    <div class="container" style="margin-top: 5rem;">
+
+        <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <h3>Name: <%= sacco.name %> </h3>
+                <p>Units: <%= sacco.units %> </p>
+                <p>Road: <%= sacco.road %> </p>
+                <p>About: <%= sacco.about %> </p>
+            </div>
+            <div class="col-8">
+                <img src="/uploads/images/<%= sacco.image %> " style="width: 100%; height: 10rem;">
+            </div>
+        </div>
+        </div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis officiis cumque illo inventore dolorum veritatis sequi minima explicabo odio, nobis, animi dicta itaque tempora! Dolores totam harum cum dolore cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit. In autem cumque ipsam assumenda? Dolores vero illo exercitationem, nesciunt quis dolorem eligendi in nobis voluptatem, similique aliquam, accusantium labore fugiat excepturi.</p>
+
+        <hr>
+        <h5>Add your comment <span class="text-danger"><%= user.name %></span> </h5>
+        <form action="/comment/<%= sacco._id %> " method="POST">
+            <textarea name="comment" class="form-control" required id="comment" cols="5" rows="5" placeholder="Start typing..."></textarea> <br>
+            <button class="btn btn-primary">Comment</button>
+        </form>
+        <br>
+        <h6>All Comments</h6>
+        <% if(comment) { %>
+            <% for(com of comment) { %> 
+                <li><%= com.comment %> </li>
+            <% } %>
+        <% } else { %>
+            <p>No comments available Add comment</p>
+        <% } %>
+        
+        <br> 
+        <a href="/details/<%= sacco._id %>/edit "><button class="btn btn-info">Edit Info</button></a>
+        <br> <br>
+        <form action="/details/<%= sacco._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-danger">Delete Sacco</button>
+        </form>
+    </div>
+
+<%- include("partials/footer")  %> 

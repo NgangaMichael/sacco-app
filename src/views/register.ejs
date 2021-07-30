@@ -1,0 +1,45 @@
+<%- include("partials/header")  %>
+<%- include("partials/navbar")  %> 
+
+    <div class="container regcont" style="width: 40%; margin: auto; margin-top: 8rem; margin-bottom: 7.3rem;">
+        <h2 class="text-center">Log-In</h2>
+        <form action="/login" method="POST">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" id="email" required>
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="password" required>
+            <br>
+            <button class="btn btn-primary">Log-In</button>
+        </form>
+        <br>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                <span class="">Dont have an account!! Sign-Up</span>
+            </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+            <h2>Sign-Up</h2>
+            <form action="/signup" method="POST" enctype="multipart/form-data">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" id="name" required>
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" id="email" required>
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" id="password" required>
+                <label for="image" class="form-label">Upload Image</label>
+                <input type="file" class="form-control" name="image" id="image">
+                <br>
+                <button class="btn btn-primary">Sign Up</button>
+            </form>
+            </div>
+            </div>
+        </div>
+        </div>
+
+
+    </div>
+
+<%- include("partials/footer")  %> 
